@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar of Events</title>
+</head>
+<body>
+  <header>
+    <h1>Calendar of Events</h1>
+  </header>
+  <main>
+    <table id="event-calendar"></table>
+
+  </main>
+  <script>
+     window.onload = displayCalendar;  
+    function displayCalendar() {
+      let table = document.getElementById("event-calendar");
+      let events = [
+        { date: "January 1", event: "New Year's Day Celebration" },
+        { date: "February 14", event: "Valentine's Day Dance" },
+        { date: "March 17", event: "St. Patrick's Day Parade" },
+        { date: "April 1", event: "April Fool's Day Festival" },
+        { date: "May 5", event: "Cinco de Mayo Celebration" }
+      ];
+ for (let i = 0; i < events.length; i++) {
+  let row = table.insertRow();
+  let dateCell = row.insertCell();
+  let eventCell = row.insertCell();
+  dateCell.innerHTML = events[i].date;
+  eventCell.innerHTML = events[i].event;
+}
+    }
+  </script>
+</body>
+
+
+
+
