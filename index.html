@@ -1,34 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello, World!</title>
-    <style>
-      /* Add some style to the page */
-      body {
-        background-color: #4a4e69;
-        color: #f2e9e4;
-        font-family: sans-serif;
-        font-size: 2em;
-        text-align: center;
-        margin-top: 50px;
+<html>
+<head>
+  <title>San Miguel Community Website</title>
+  <style>
+    body {
+      background-image: url('SAN_MIGUEL_sign.jpeg');
+      background-size: cover;
+    }
+    header {
+      background-color: transparent;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      background-color: transparent;
+      padding: 10px;
+      text-align: left;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>San Miguel Community Website</h1>
+  </header>
+  <nav>
+  <style>
+  ul {
+    list-style-type: none;
+  }
+</style>
+    <ul>
+      <li><a id="calendar-link" href="calendar.html">Calendar of Events</a></li>
+      <li><a href="info.html">General Information</a></li>
+      <li><a href="Important.html">Important Phone Numbers</a></li>
+    </ul>
+  </nav>
+  <script>
+    function displayCalendar() {
+      let table = document.getElementById("event-calendar");
+      let events = [
+        { date: "January 1", event: "New Year's Day Celebration" },
+        { date: "February 14", event: "Valentine's Day Dance" },
+        { date: "March 17", event: "St. Patrick's Day Parade" },
+        { date: "April 1", event: "April Fool's Day Festival" },
+        { date: "May 5", event: "Cinco de Mayo Celebration" }
+      ];
+      for (let i = 0; i < events.length; i++) {
+        let row = table.insertRow();
+        let dateCell = row.insertCell();
+        let eventCell = row.insertCell();
+        dateCell.innerHTML = events[i].date;
+        eventCell.innerHTML = events[i].event;
       }
+    }
 
-      h1 {
-        font-size: 3em;
-        margin-bottom: 30px;
-        text-shadow: 2px 2px #323232;
-      }
-      
-      p {
-        font-size: 1.5em;
-        margin-top: 30px;
-        text-shadow: 2px 2px #323232;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my fancy HTML page!</p>
-  </body>
+    document.getElementById("calendar-link").addEventListener("click", function() {
+      displayCalendar();
+    });
+  </script>
+</body>
 </html>
